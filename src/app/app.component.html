@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="header">
+    <svg (click)="openSidebar()" height="30px" viewBox="0 -53 384 384" width="30px" xmlns="http://www.w3.org/2000/svg"
+      class="icon">
+      <path
+        d="m368 154.667969h-352c-8.832031 0-16-7.167969-16-16s7.167969-16 16-16h352c8.832031 0 16 7.167969 16 16s-7.167969 16-16 16zm0 0" />
+      <path
+        d="m368 32h-352c-8.832031 0-16-7.167969-16-16s7.167969-16 16-16h352c8.832031 0 16 7.167969 16 16s-7.167969 16-16 16zm0 0" />
+      <path
+        d="m368 277.332031h-352c-8.832031 0-16-7.167969-16-16s7.167969-16 16-16h352c8.832031 0 16 7.167969 16 16s-7.167969 16-16 16zm0 0" />
+    </svg>
+  </div>
+  <div class="content" (click) = "onClick()">
+    <img src="https://www.markatablo.com/image/cache/data/resimler/cicek-tablolari/MT-33__model_3-1000x1000.png">
+  </div>
+</div>
+<app-sidebar *ngIf="sidebar"></app-sidebar>

@@ -1,4 +1,5 @@
 import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -8,20 +9,38 @@ import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 export class AppComponent {
   title = 'sidebar';
   sidebar = false;
-  // @ViewChild('sidebar', {static: false}) sidebar: ElementRef;
+  isOpen = false;
 
   @HostListener('window', ['$event.target'])
   onClick() {
     this.sidebar = false;
- }
-
-  constructor(){}
-
-  openSidebar(){
-    // this.sidebar.nativeElement.style.width ="300px";
-    this.sidebar = !this.sidebar;
-
   }
 
-  
+  constructor(private activatedRoute: ActivatedRoute, private router: Router) { }
+
+  ngOnInit() {
+    console.log("sayfa yük" , this.sidebar)
+    this.activatedRoute.queryParams.subscribe((qp) => {
+      console.log('params: ', qp);
+      this.sidebar = qp.sidebarOpenState;
+       console.log('click 2: ', this.sidebar);
+    });
+  }
+
+  openSidebar() {
+    this.sidebar = !this.sidebar;
+    this.router.navigate([], {
+      relativeTo: this.activatedRoute,
+      queryParams: {sidebarOpenState: this.sidebar},
+      queryParamsHandling: 'merge'
+    });
+    console.log('click 1: ', this.sidebar);
+    
+  }
+
+  openMenu(){
+    this.isOpen = !this.isOpen;
+  }
+
+
 }

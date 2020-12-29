@@ -1,71 +1,163 @@
-
-.container{
-    display: flex;
-    flex-direction: column;
-    height: 600px;
-    align-items: center;
-    justify-content: center;
-}
-
+@import "../styles.scss";
 .header{
     width: 100%;
     height: 55px;
-    background-color: rgb(180, 62, 62);
-    position: absolute;
+    background-color: $header-background-color;
+    position: fixed;   
     top:0;
     left: 0;
     box-shadow: 0px 0px 5px black;
-    display: block;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+    .hamburger-icon{
+        fill: $icon-color;
+        left:0px;
+        padding: 12px;
+    }
+    
+    .hamburger-icon:hover{
+        background-color: $icon-background-hover;
+        fill: $icon-color-hover;
+        padding-top: 16px;
+        padding-bottom: 16px;
+        cursor: pointer;
+    }
 
-}
+    .night-icon {
+        fill: $icon-color;
+        padding: 15px;
+    }
+    
+    .night-icon:hover{
+        padding: 16px 16px 16px 16px;
+        background-color: $icon-background-hover;
+        fill:$icon-color-hover;
+        cursor: pointer;
+    }
 
-.icon{
-    fill:white;
-    left:0px;
-    padding: 12px;
-}
-
-.icon:hover{
-    background-color: rgb(228, 225, 225);
-    fill:rgb(180, 62, 62);
 }
 
 .content{
     width: 100%;
-    height: 500px;
+    height: calc(100%-55px);
+    top:55px;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-img{
-    margin-top: 50px;
-    width: 550px;
-    height: 450px;
-    box-shadow: 1px 1px 10px black;
-    border-radius: 10px;
-
-}
-
-.sidebar{
-    height: 100%; /* Full-height: remove this if you want "auto" height */
-    width: 300px; /* Set the width of the sidebar */
-    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
-    z-index: 1; /* Stay on top */
-    top:55px;
+    position: absolute;
+    padding-top: 70px;
+    margin: 0px;
     left: 0;
-    background-color: rgb(228, 225, 225);
-    overflow-x: hidden; /* Disable horizontal scroll */
-   
+    background-color: rgba(153, 153, 153, 0.151);
+    padding-bottom: 170px;
+    .menu-container{
+        top:0px;
+        right:18px;
+        display: flex;
+        position: absolute;
+        z-index: 1;
 
+        .arrow-up {
+         position: absolute;
+         right:0px;
+         width: 0; 
+         height: 0; 
+         border-left: 15px solid transparent;
+         border-right: 15px solid transparent;
+         border-bottom: 18px solid rgb(255, 255, 255);
+         
+     
+         }
+ 
+       .menu {
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         align-items: center;
+         box-shadow: 1px 0px 20px rgb(179, 178, 178);
+         padding: 10px 25px 20px 25px;
+         border-radius: 5px;
+         margin-top: 10px;
+         background-color: white;
+ 
+         p {
+             font-family: Verdana, Geneva, Tahoma, sans-serif;
+              font-size: 13px;
+              color: $p-color;
+              font-weight: bold;
+         }
+ 
+ 
+         .switch {
+             position: relative;
+             display: inline-block;
+             width: 49px;
+             height: 24px;
+           }
+           
+           .switch input { 
+             opacity: 0;
+             width: 0;
+             height: 0;
+           }
+           
+           .slider {
+             position: absolute;
+             cursor: pointer;
+             top: 0;
+             left: 0;
+             right: 0;
+             bottom: 0;
+             background-color: #ccc;
+             -webkit-transition: .4s;
+             transition: .4s;
+           }
+           
+           .slider:before {
+             position: absolute;
+             content: "";
+             height: 16px;
+             width: 16px;
+             left: 4px;
+             bottom: 4px;
+             background-color: white;
+             -webkit-transition: .4s;
+             transition: .4s;
+           }
+           
+           input:checked + .slider {
+             background-color: $p-color;
+           }
+           
+           input:focus + .slider {
+             box-shadow: 0 0 1px rgb(180, 62, 62);
+           }
+           
+           input:checked + .slider:before {
+             -webkit-transform: translateX(26px);
+             -ms-transform: translateX(26px);
+             transform: translateX(26px);
+           }
+           
+           /* Rounded sliders */
+           .slider.round {
+             border-radius: 34px;
+           }
+           
+           .slider.round:before {
+             border-radius: 50%;
+           }
+     
+         }
+     }
+
+    img{
+        width: 550px;
+        height: 450px;
+        box-shadow: 1px 1px 10px black;
+        border-radius: 10px;
+    
+    }
 }
-
-.sidebar a {
-    padding: 15px 8px 6px 16px;
-    text-decoration: none;
-    font-size: 25px;
-    color: rgb(180, 62, 62);
-    display: block;
-    transition: 0.3s;
-
-  }

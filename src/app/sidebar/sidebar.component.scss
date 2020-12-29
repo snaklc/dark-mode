@@ -1,3 +1,5 @@
+@import "../../styles.scss";
+
 .sidebar{
     height: 100%; /* Full-height: remove this if you want "auto" height */
     width: 350px; /* Set the width of the sidebar */
@@ -5,28 +7,32 @@
     z-index: 1; /* Stay on top */
     top:55px;
     left: 0;
-    background-color: rgb(228, 225, 225);
-    overflow-x: hidden; /* Disable horizontal scroll */
-   
+    background-color: $sidebar-background;
+    overflow-x: hidden; /* Disable horizontal scroll */ ;
+
+    ul{
+        padding: 15px;
+
+
+        a {
+            padding: 15px 0px 6px 16px;
+            text-decoration: none;
+            font-size: 25px;
+            color: $sidebar-text-color;
+            display: block;
+            transition: 0.3s;
+        
+          }
+        
+        a:hover{
+            color:$sidebar-text-color-hover;
+            background-color: $sidebar-background-hover;
+            cursor: pointer;
+        
+        } 
+
+        
+    }
 
 }
 
-.sidebar a {
-    padding: 15px 0px 6px 16px;
-    text-decoration: none;
-    font-size: 25px;
-    color: rgb(180, 62, 62);
-    display: block;
-    transition: 0.3s;
-
-  }
-
-.sidebar a:hover{
-    color:white;
-    background-color: rgb(180, 62, 62);
-
-}  
-
-ul{
-    padding: 15px;
-}

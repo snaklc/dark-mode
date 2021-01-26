@@ -1,5 +1,7 @@
 import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ThemeService } from './theme/theme.service';
+
 
 @Component({
   selector: 'app-root',
@@ -16,14 +18,14 @@ export class AppComponent {
     this.sidebar = false;
   }
 
-  constructor(private activatedRoute: ActivatedRoute, private router: Router) { }
+  constructor(private activatedRoute: ActivatedRoute, private router: Router, private themeService: ThemeService) { }
 
   ngOnInit() {
-    console.log("sayfa yük" , this.sidebar)
+    console.log("sayfa yük", this.sidebar)
     this.activatedRoute.queryParams.subscribe((qp) => {
       console.log('params: ', qp);
       this.sidebar = qp.sidebarOpenState;
-       console.log('click 2: ', this.sidebar);
+      console.log('click 2: ', this.sidebar);
     });
   }
 
@@ -31,15 +33,24 @@ export class AppComponent {
     this.sidebar = !this.sidebar;
     this.router.navigate([], {
       relativeTo: this.activatedRoute,
-      queryParams: {sidebarOpenState: this.sidebar},
+      queryParams: { sidebarOpenState: this.sidebar },
       queryParamsHandling: 'merge'
     });
     console.log('click 1: ', this.sidebar);
-    
+
   }
 
-  openMenu(){
+  openMenu() {
     this.isOpen = !this.isOpen;
+  }
+
+  toggle() {
+    const active = this.themeService.getActiveTheme();
+    if (active.name === 'light') {
+      this.themeService.setTheme('dark');
+    } else {
+      this.themeService.setTheme('light');
+    }
   }
 
 

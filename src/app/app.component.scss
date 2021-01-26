@@ -1,8 +1,7 @@
-@import "../styles.scss";
 .header{
     width: 100%;
     height: 55px;
-    background-color: $header-background-color;
+    background-color: var(--header-background-color);
     position: fixed;   
     top:0;
     left: 0;
@@ -12,28 +11,28 @@
     align-items: center;
     z-index: 1;
     .hamburger-icon{
-        fill: $icon-color;
+        fill: var(--icon-color) ;
         left:0px;
         padding: 12px;
     }
     
     .hamburger-icon:hover{
-        background-color: $icon-background-hover;
-        fill: $icon-color-hover;
+        background-color: var(--icon-background-hover);
+        fill: var(--icon-color-hover);
         padding-top: 16px;
         padding-bottom: 16px;
         cursor: pointer;
     }
 
     .night-icon {
-        fill: $icon-color;
+        fill: var(--icon-color);
         padding: 15px;
     }
     
     .night-icon:hover{
         padding: 16px 16px 16px 16px;
-        background-color: $icon-background-hover;
-        fill:$icon-color-hover;
+        background-color: var(--icon-background-hover);
+        fill:var(--icon-color-hover);
         cursor: pointer;
     }
 
@@ -85,7 +84,8 @@
          p {
              font-family: Verdana, Geneva, Tahoma, sans-serif;
               font-size: 13px;
-              color: $p-color;
+              color: var(--p-color);
+              
               font-weight: bold;
          }
  
@@ -128,7 +128,7 @@
            }
            
            input:checked + .slider {
-             background-color: $p-color;
+             background-color: var(--p-color);
            }
            
            input:focus + .slider {

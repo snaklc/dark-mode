@@ -28,9 +28,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss",
-              "src/light-theme",
-              "src/dark-theme"
+              "src/styles.scss"
             ],
             "scripts": []
           },

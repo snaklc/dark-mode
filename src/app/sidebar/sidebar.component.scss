@@ -1,4 +1,3 @@
-@import "../../styles.scss";
 
 .sidebar{
     height: 100%; /* Full-height: remove this if you want "auto" height */
@@ -7,7 +6,8 @@
     z-index: 1; /* Stay on top */
     top:55px;
     left: 0;
-    background-color: $sidebar-background;
+    background-color: var(--sidebar-background);
+   
     overflow-x: hidden; /* Disable horizontal scroll */ ;
 
     ul{
@@ -18,18 +18,16 @@
             padding: 15px 0px 6px 16px;
             text-decoration: none;
             font-size: 25px;
-            color: $sidebar-text-color;
+            color: var(--sidebar-text-color);
             display: block;
             transition: 0.3s;
-        
           }
         
         a:hover{
-            color:$sidebar-text-color-hover;
-            background-color: $sidebar-background-hover;
+            color: var(--sidebar-text-color-hover);
+            background-color: var(--sidebar-background-hover);
             cursor: pointer;
-        
-        } 
+        }
 
         
     }

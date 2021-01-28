@@ -7,7 +7,7 @@
     top:55px;
     left: 0;
     background-color: var(--sidebar-background);
-   
+    user-select: none;
     overflow-x: hidden; /* Disable horizontal scroll */ ;
 
     ul{

@@ -12,6 +12,8 @@ export class AppComponent {
   title = 'sidebar';
   sidebar = false;
   isOpen = false;
+  darkMode = false;
+  lightMode = true;
 
   @HostListener('window', ['$event.target'])
   onClick() {
@@ -21,11 +23,8 @@ export class AppComponent {
   constructor(private activatedRoute: ActivatedRoute, private router: Router, private themeService: ThemeService) { }
 
   ngOnInit() {
-    console.log("sayfa yük", this.sidebar)
     this.activatedRoute.queryParams.subscribe((qp) => {
-      console.log('params: ', qp);
-      this.sidebar = qp.sidebarOpenState;
-      console.log('click 2: ', this.sidebar);
+      this.sidebar = qp.sidebarOpenState === 'true' ? true : false;
     });
   }
 
@@ -36,22 +35,29 @@ export class AppComponent {
       queryParams: { sidebarOpenState: this.sidebar },
       queryParamsHandling: 'merge'
     });
-    console.log('click 1: ', this.sidebar);
-
   }
-
   openMenu() {
     this.isOpen = !this.isOpen;
   }
-
   toggle() {
+    this.playAudio()
     const active = this.themeService.getActiveTheme();
     if (active.name === 'light') {
       this.themeService.setTheme('dark');
+      this.darkMode = true;
+      this.lightMode = false;
     } else {
       this.themeService.setTheme('light');
+      this.darkMode = false;
+      this.lightMode = true;
     }
   }
 
+  playAudio() {
+    let audio = new Audio();
+    audio.src = "assets/audio/click-sound.mp3";
+    audio.load();
+    audio.play();
+  }
 
 }

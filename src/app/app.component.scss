@@ -27,13 +27,23 @@
     .night-icon {
         fill: var(--icon-color);
         padding: 15px;
-    }
-    
+    } 
     .night-icon:hover{
         padding: 16px 16px 16px 16px;
         background-color: var(--icon-background-hover);
         fill:var(--icon-color-hover);
         cursor: pointer;
+    }
+
+    .light-icon{
+      fill: var(--icon-color);
+      padding: 15px;
+    }
+    .light-icon:hover{
+      padding: 16px 16px 16px 16px;
+      background-color: var(--icon-background-hover);
+      fill:var(--icon-color-hover);
+      cursor: pointer;
     }
 
 }
@@ -158,6 +168,7 @@
         height: 450px;
         box-shadow: 1px 1px 10px black;
         border-radius: 10px;
+        user-select: none;
     
     }
 }

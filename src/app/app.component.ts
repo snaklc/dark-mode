@@ -52,7 +52,6 @@ export class AppComponent {
       this.lightMode = true;
     }
   }
-
   playAudio() {
     let audio = new Audio();
     audio.src = "assets/audio/click-sound.mp3";

@@ -50,15 +50,14 @@
 
 .content{
     width: 100%;
-    height: calc(100%-55px);
     top:55px;
     display: flex;
     justify-content: center;
     align-items: center;
     position: absolute;
-    padding-top: 70px;
     margin: 0px;
     left: 0;
+    bottom: 0;
     background-color: rgba(153, 153, 153, 0.151);
     padding-bottom: 170px;
     .menu-container{
@@ -164,8 +163,8 @@
      }
 
     img{
-        width: 550px;
-        height: 450px;
+        width: 700px;
+        height: 610px;
         box-shadow: 1px 1px 10px black;
         border-radius: 10px;
         user-select: none;

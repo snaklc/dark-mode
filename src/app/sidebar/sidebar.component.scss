@@ -11,23 +11,26 @@
     overflow-x: hidden; /* Disable horizontal scroll */ ;
 
     ul{
-        padding: 15px;
-
-
+        padding: 0px;
+        text-align: center;
         a {
-            padding: 15px 0px 6px 16px;
+            padding: 15px 10px 15px 0px;
             text-decoration: none;
             font-size: 25px;
             color: var(--sidebar-text-color);
             display: block;
             transition: 0.3s;
-          }
-        
-        a:hover{
-            color: var(--sidebar-text-color-hover);
-            background-color: var(--sidebar-background-hover);
-            cursor: pointer;
+
+            &:hover{
+                color: var(--sidebar-text-color-hover);
+                background-color: var(--sidebar-background-hover);
+                cursor: pointer;
+            }
         }
+
+       
+        
+        
 
         
     }
